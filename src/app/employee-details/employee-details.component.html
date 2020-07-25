@@ -1,0 +1,91 @@
+<!-- <div class="title" fxLayoutAlign="center center"> Company Employee Details </div>
+
+<div fxLayout="row"  fxLayoutGap="40px" class="parent-container">
+
+
+
+<div>
+<div class="table-container" fxLayout="column">
+    <div class="table-header" fxLayout="row">
+        <div  class="check-box" fxLayoutAlign="start center">
+            <input type="checkbox" disabled="true"/>
+        </div>
+        <div class="emp-id" fxLayoutAlign="start center">
+            <span>EmpID</span>
+        </div>
+        <div class="name" fxLayoutAlign="start center">
+            <span>Name</span>
+        </div>
+        <div class="designation" fxLayoutAlign="start center">
+            <span>Designation</span>
+        </div>
+        <div class="total-exp" fxLayoutAlign="start center">
+            <span>TotalExperince</span>
+        </div>
+    </div>
+    <div class="table-body">
+        <div class="table-row" *ngFor="let item of allEmployees" fxLayout="row">
+            <div class="check-box" fxLayoutAlign="start center">
+                <input type="checkbox" [(ngModel)]="item.isSelected" (change)="changeStatus(item)"/>
+            </div>
+            <div class="emp-id" fxLayoutAlign="start center">
+                <span>{{item.empid}}</span>
+            </div>
+            <div class="name" fxLayoutAlign="start center">
+                <span>{{item.name}}</span>
+            </div>
+            <div class="designation" fxLayoutAlign="start center">
+                <span>{{item.designation}}</span>
+            </div>
+            <div class="total-exp" fxLayoutAlign="start center">
+                <span>{{item.totalexperience}}</span>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+<div class="action-container" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+    <div class="action" (click)="addEmployee()"><button>ADD EMPLOYEE</button></div>
+    <div class="action" (click)="updateEmployee()"><button>UPDATE EMPLOYEE</button></div>
+    <div class="action" (click)="deleteEmployee()"><button>DELETE EMPLOYEE</button></div>
+</div>
+</div>
+
+<div fxLayout="column" fxLayoutGap="40px">
+    <div class="payroll"  (click)="payroll()">PAYROLL</div>
+    <div class="Yoda">YODA</div>
+    <div class="Yoda" (click)="attendance()">ATTENDANCE</div>
+    <div class="Yoda">LATEST UPDATES</div>
+    <div class="Yoda">CHATBOX</div>
+</div>
+
+
+
+
+
+</div> -->
+
+
+<div  fxLayoutAlign="start start"><button type="submit" class="action" (click)="addEmployee()">ADD EMPPLOYEE</button></div><br>
+<div>
+<kendo-grid [data]="allEmployees" [height]="330" [sortable]="true"
+[pageable]="true"
+[filterable]="true" [pageSize]="pageSize"  [groupable]="true">
+    <kendo-grid-column field="empID" title="EMP ID" width="20" >
+    </kendo-grid-column>
+    <kendo-grid-column field="name" title="Name" width="20">
+    </kendo-grid-column>
+    <kendo-grid-column field="designation" title="DESIGNATION"  width="20">
+    </kendo-grid-column>
+    <kendo-grid-column field="totalExperience" title="TOTAL EXPERIENCE" width="20">
+</kendo-grid-column>
+<kendo-grid-column  title="UPDATE/DELETE" width="40">
+<ng-template kendoGridCellTemplate let-dataItem>
+<button type="submit" class="action" (click)="updateEmployee(dataItem)">UPDATE</button><button type="submit" class="action" 
+(click)=deleteEmployee(dataItem)>DELETE</button></ng-template>
+</kendo-grid-column>
+</kendo-grid>
+</div>
