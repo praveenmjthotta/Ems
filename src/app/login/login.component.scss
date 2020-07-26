@@ -1,24 +1,27 @@
-.container{
-  font-size: 20px ;
+.container {
+  font-size: 20px;
   background-color: lightgray;
   height: 35t0px;
-.login-logo{
-    background-image: url('/assets/ems.png');
+  .login-logo {
+    background-image: url("/assets/ems.png");
     background-position: center;
     background-repeat: no-repeat;
     background-color: cadetblue;
     height: 300px;
     width: 600px;
-}
+  }
 
-.login{
-    height: 30px;
-    width: 100px;border-radius: 5px;
+  .login {
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
     border: 2px solid black;
-}
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
 
-
-.employee-list{
-  background-color: white;
-}
+  .employee-list {
+    background-color: white;
+  }
 }

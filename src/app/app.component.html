@@ -1,17 +1,21 @@
 <div class="master-container">
-  <div fxLayout="row" class="header"  fxLayoutAlign="space-between center">
+  <div fxLayout="row" class="header" fxLayoutAlign="space-between center">
     <div></div>
     <div>EMPLOYEE MANAGEMENT PORTAL </div>
-    <div> <button type="button"  class="sign-out" (click)="logout()">SIGN OUT</button></div>
+    <div> <button type="button" class="sign-out" (click)="logout()">SIGN OUT</button></div>
   </div>
 
   <div class="container" fxLayoutAlign="center center">
-    <router-outlet></router-outlet>
+    <router-outlet> </router-outlet>
+    <div class="loading-indicator" *ngIf="loadingRouteConfig">
+      <mat-progress-spinner mode="indeterminate" color="accent"></mat-progress-spinner>
+    </div>
+
   </div>
 
   <div class="footer" fxLayoutAlign="center center" fxLayoutAlign="space-between center">
     <div></div>
     <div>© 2020 ABC Software Solutions, LLC. | All rights reserved</div>
-    <div> <button type="button"  class="sign-out">HELP DESK</button></div>
+    <div> <button type="button" class="sign-out" (click)="helpdesk()">HELP DESK</button></div>
   </div>
 </div>

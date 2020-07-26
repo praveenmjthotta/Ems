@@ -10,16 +10,16 @@ import { employee } from '../Models/employee';
 export class UpdateemployeeComponent implements OnInit {
   employee: employee;
   designation: string;
-  empid: string;
+  empID: string;
   name: string;
-  totalexperience: string;
-  isSelected: false
+  totalExperience: string;
+  isSelected: false;
   constructor(
     public dialogRef: MatDialogRef<UpdateemployeeComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {
     this.designation = data.designation;
-    this.empid = data.empid;
+    this.empID = data.empID;
     this.name = data.name;
-    this.totalexperience = data.totalexperience;
+    this.totalExperience = data.totalExperience;
 
 
 
@@ -32,9 +32,9 @@ export class UpdateemployeeComponent implements OnInit {
   save() {
     this.employee = {
       designation: this.designation,
-      empid: this.empid,
+      empID: this.empID,
       name: this.name,
-      totalexperience: this.totalexperience,
+      totalExperience: this.totalExperience,
       isSelected: false
 
     }

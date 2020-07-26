@@ -5,9 +5,9 @@ import { EmployeeDetailsComponent } from '../employee-details/employee-details.c
 
 const routes: Routes = [
   {
-    path:'',component:EmployeeDetailsComponent
+    path: '', component: EmployeeDetailsComponent
   },
-  
+
 ];
 
 @NgModule({

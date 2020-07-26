@@ -5,19 +5,20 @@ import { attendanceRoutingModule } from './attendance-routingmodule';
 import { EmployeeDetailsComponent } from '../employee-details/employee-details.component';
 import { AddemployeeComponent } from '../addemployee/addemployee.component';
 import { UpdateemployeeComponent } from '../updateemployee/updateemployee.component';
-import {MatDialogModule} from "@angular/material/dialog";
+import { MatDialogModule } from "@angular/material/dialog";
 import { GridModule } from '@progress/kendo-angular-grid';
 import { FormsModule } from '@angular/forms';
+import { HelpdeskComponent } from '../helpdesk/helpdesk.component';
 
 @NgModule({
   declarations: [
-    AtendancedetailsComponent, 
+    AtendancedetailsComponent,
     EmployeeDetailsComponent,
     AddemployeeComponent,
     UpdateemployeeComponent],
   imports: [
     CommonModule,
-    attendanceRoutingModule,MatDialogModule,GridModule, FormsModule,
-  ] ,entryComponents: [UpdateemployeeComponent,AddemployeeComponent]
+    attendanceRoutingModule, MatDialogModule, GridModule, FormsModule,
+  ], entryComponents: [UpdateemployeeComponent, AddemployeeComponent]
 })
 export class AttendanceportalModule { }

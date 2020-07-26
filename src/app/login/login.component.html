@@ -1,23 +1,25 @@
-<div  fxLayout="row" fxLayoutGap="20px" class="container" fxLayoutAlign="space-between center">
+<div fxLayout="row" fxLayoutGap="20px" class="container" fxLayoutAlign="space-between center">
 
-    <div class="login-logo"></div>
-    <div fxLayout="column" fxLayoutGap="20px" fxLayoutAlign="center center">
-        <div fxLayout="row" fxLayoutGap="10px">
-            <label>username</label>
-            <input type="text" autocomplete="true" id="username"  [(ngModel)]="userName"/>
-        </div>
-        <div fxLayout="row" fxLayoutGap="10px">
-            <label>Password</label>
-            <input type="password" id="password" [(ngModel)]="password"/>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="center  center">
-            <button class="login" (click)="Adminlogin()">Login</button>
-        </div>
-
+  <div class="login-logo"></div>
+  <div fxLayout="column" fxLayoutGap="20px" fxLayoutAlign="center center">
+    <div fxLayout="row" fxLayoutGap="10px">
+      <label>username</label>
+      <input type="text" autocomplete="true" id="username" [(ngModel)]="userName" />
     </div>
-<div fxLayoutAlign="center center" class="about">
-    <span>An employee management system consists of crucial work-related and important personal information about an employee. In a nutshell, it is an online inventory of all employees of an organization. Employees are the strength of any organization, and it is more so in case of a growing business.</span></div>
+    <div fxLayout="row" fxLayoutGap="10px">
+      <label>Password</label>
+      <input type="password" id="password" [(ngModel)]="password" />
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center  center">
+      <button class="login" (click)="Adminlogin()">Login</button>
+    </div>
+
+  </div>
+  <div fxLayoutAlign="center center" class="about">
+    <span>An employee management system consists of crucial work-related and important personal information about an
+      employee. In a nutshell, it is an online inventory of all employees of an organization. Employees are the strength
+      of any organization, and it is more so in case of a growing business.</span></div>
 </div>
 <div class="employee-list">
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>

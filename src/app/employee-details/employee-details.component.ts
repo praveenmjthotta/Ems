@@ -16,19 +16,43 @@ export class EmployeeDetailsComponent implements OnInit {
   modifyRecords: any[] = [];
   pageSize = 10;
   constructor(private _employeServices: EmployeeserviceService, private _MatDialog: MatDialog,
-    
+
     private router: Router) { }
 
   ngOnInit(): void {
-    
-    this.allEmployees=[];
-     this._employeServices.getAllEmployess().
-   subscribe((x:any)=>{
-     debugger;
-    this.allEmployees=x;
-   
-   });
-  
+
+    this.allEmployees = [];
+    this._employeServices.getAllEmployess().
+      subscribe((x: any) => {
+        debugger;
+        this.allEmployees = x;
+
+      });
+
+    if (this.allEmployees.length === 0) {
+      this.allEmployees = [{
+        isSelected: false,
+        empID: "01",
+        name: "Praveen",
+        designation: "Software Engineer",
+        totalexperience: "3",
+      },
+      {
+        isSelected: false,
+        empID: "02",
+        name: "kumara",
+        designation: "Senoir Software Engineer",
+        totalexperience: "3",
+      },
+      {
+        isSelected: false,
+        empID: "03",
+        name: "Murugesan",
+        designation: "Manager",
+        totalexperience: "3",
+      },
+      ]
+    }
   }
 
   changeStatus(event: any) {
@@ -53,9 +77,9 @@ export class EmployeeDetailsComponent implements OnInit {
     });
   }
 
-  updateEmployee(dataItem:any) {
-console.log(dataItem);
-debugger;
+  updateEmployee(dataItem: any) {
+    console.log(dataItem);
+    debugger;
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.height = "400px";
@@ -63,39 +87,39 @@ debugger;
     //const updateItem = this.allEmployees.filter((x: employee) => x.isSelected);
     dialogConfig.data = dataItem;
 
-   // const isRecordSelected = this.allEmployees.filter(x => x.isSelected)
+    // const isRecordSelected = this.allEmployees.filter(x => x.isSelected)
     if (true) {
       let dialogRef = this._MatDialog.open(UpdateemployeeComponent, dialogConfig);
       dialogRef.afterClosed().subscribe((result: employee) => {
         debugger;
-        if(result){
-        this.allEmployees.map((x: employee) => {
-          if (x.empid === result.empid){
-            x.designation = result.designation;
-          x.name = result.name;
-          x.totalexperience = result.totalexperience;
-          }
-        })
-      }
+        if (result) {
+          this.allEmployees.map((x: employee) => {
+            if (x.empID === result.empID) {
+              x.designation = result.designation;
+              x.name = result.name;
+              x.totalExperience = result.totalExperience;
+            }
+          })
+        }
       });
     }
-    else{
-      
+    else {
+
     }
   }
 
-  deleteEmployee(dataItem:any) {
+  deleteEmployee(dataItem: any) {
     debugger;
-    this.allEmployees = this._employeServices.deleteEmployees(dataItem);
+    this.allEmployees = this._employeServices.deleteEmployees(dataItem,this.allEmployees);
     this.modifyRecords = [];
   }
 
 
-  payroll(){
+  payroll() {
     this.router.navigateByUrl('/payroll');
   }
 
-  attendance(){
+  attendance() {
     debugger;
     this.router.navigateByUrl('/attendance')
   }

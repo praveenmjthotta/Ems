@@ -69,23 +69,23 @@
 </div> -->
 
 
-<div  fxLayoutAlign="start start"><button type="submit" class="action" (click)="addEmployee()">ADD EMPPLOYEE</button></div><br>
+<div fxLayoutAlign="start start"><button type="submit" class="action" (click)="addEmployee()">ADD EMPPLOYEE</button>
+</div><br>
 <div>
-<kendo-grid [data]="allEmployees" [height]="330" [sortable]="true"
-[pageable]="true"
-[filterable]="true" [pageSize]="pageSize"  [groupable]="true">
-    <kendo-grid-column field="empID" title="EMP ID" width="20" >
+  <kendo-grid [data]="allEmployees" [height]="330" [sortable]="true" [pageable]="true" [filterable]="true"
+    [pageSize]="pageSize" [groupable]="true">
+    <kendo-grid-column field="empID" title="EMP ID" width="20">
     </kendo-grid-column>
     <kendo-grid-column field="name" title="Name" width="20">
     </kendo-grid-column>
-    <kendo-grid-column field="designation" title="DESIGNATION"  width="20">
+    <kendo-grid-column field="designation" title="DESIGNATION" width="20">
     </kendo-grid-column>
     <kendo-grid-column field="totalExperience" title="TOTAL EXPERIENCE" width="20">
-</kendo-grid-column>
-<kendo-grid-column  title="UPDATE/DELETE" width="40">
-<ng-template kendoGridCellTemplate let-dataItem>
-<button type="submit" class="action" (click)="updateEmployee(dataItem)">UPDATE</button><button type="submit" class="action" 
-(click)=deleteEmployee(dataItem)>DELETE</button></ng-template>
-</kendo-grid-column>
-</kendo-grid>
+    </kendo-grid-column>
+    <kendo-grid-column title="UPDATE/DELETE" width="40">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <button type="submit" class="action" (click)="updateEmployee(dataItem)">UPDATE</button><button type="submit"
+          class="action" (click)=deleteEmployee(dataItem)>DELETE</button></ng-template>
+    </kendo-grid-column>
+  </kendo-grid>
 </div>

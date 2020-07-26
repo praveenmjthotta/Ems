@@ -10,13 +10,13 @@ const routes: Routes = [
     path: 'login', component: LoginComponent
   },
   {
-    path: 'employee', 
+    path: 'employee',
     loadChildren: "./attendanceportal/attendanceportal.module#AttendanceportalModule"
   },
   {
     path: 'dashboard', component: DashboardComponent
   },
-  
+
 ];
 
 @NgModule({

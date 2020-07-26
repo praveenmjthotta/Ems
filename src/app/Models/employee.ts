@@ -1,8 +1,8 @@
-export class employee{
-    isSelected:boolean;
-    empid : String;
-    name : string;
-    designation : string;
-    totalexperience : string;
-    
+export class employee {
+  isSelected: boolean;
+  empID: String;
+  name: string;
+  designation: string;
+  totalExperience: string;
+
 }

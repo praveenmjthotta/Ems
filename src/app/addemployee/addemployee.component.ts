@@ -8,12 +8,12 @@ import { employee } from '../Models/employee';
   styleUrls: ['./addemployee.component.scss']
 })
 export class AddemployeeComponent implements OnInit {
-employee:employee;
-designation:string;
-empid:string;
-name:string;
-totalexperience:string;
-isSelected:false
+  employee: employee;
+  designation: string;
+  empID: string;
+  name: string;
+  totalExperience: string;
+  isSelected: false
 
   constructor(
     public dialogRef: MatDialogRef<AddemployeeComponent>) { }
@@ -22,12 +22,12 @@ isSelected:false
   }
 
   save() {
-    this.employee={
-      designation:this.designation,
-      empid:this.empid,
-      name:this.name,
-      totalexperience:this.totalexperience,
-      isSelected:false
+    this.employee = {
+      designation: this.designation,
+      empID: this.empID,
+      name: this.name,
+      totalExperience: this.totalExperience,
+      isSelected: false
 
     }
     this.dialogRef.close(this.employee);
